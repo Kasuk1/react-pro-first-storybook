@@ -21,6 +21,10 @@ export interface IMyLabel {
    * Select the contrast that you want with the color palette
    */
   fontColor?: string;
+  /**
+   * Select the background contrast that you want with the color palette
+   */
+  backgroundColor?: string;
 }
 
 /**
@@ -32,11 +36,12 @@ export const MyLabel = ({
   allCaps = false,
   color,
   fontColor,
+  backgroundColor = 'transparent',
 }: IMyLabel) => {
   return (
     <span
       className={`label ${size} text-${color}`}
-      style={{ color: fontColor }}
+      style={{ color: fontColor, backgroundColor }}
     >
       {allCaps ? label.toUpperCase() : label}
     </span>
